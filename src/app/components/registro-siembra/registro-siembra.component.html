@@ -1,0 +1,42 @@
+<div class="container-siembra">
+  <h2>Registro de Siembra</h2>
+  <div class="formulario">
+    <form [formGroup]="formSiembra" class="form">
+      <div class="container-input">
+        <label for="">Fecha de Siembra:</label>
+        <input type="date" name="Fecha" formControlName="Fecha" />
+      </div>
+      <div class="container-input">
+        <label for="">Variedad de Cultivo:</label>
+        <input type="text" name="Variedad" formControlName="Variedad" />
+      </div>
+      <div class="container-input">
+        <label for="">Cantidad de Semillas:</label>
+        <input type="text" name="Cantidad" formControlName="Cantidad" />
+      </div>
+
+      <button type="submit" *ngIf="!datoEdit" (click)="guardar()">
+        Registrar Siembra
+      </button>
+      <div>
+        <button class="editar" *ngIf="datoEdit" (click)="editarCampo()">
+          Editar Siembra
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="content">
+    <!-- The AG Grid component, with Dimensions, CSS Theme, Row Data, and Column Definition -->
+    <ag-grid-angular
+      class="ag-theme-quartz"
+      style="width: 100%; height: 300px"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaulColDef"
+      (gridReady)="onGridReady($event)"
+      (selectionChanged)="onSelectionChanged($event)"
+      [rowSelection]="rowSelection"
+    >
+    </ag-grid-angular>
+  </div>
+</div>

@@ -25,7 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "ag-grid-community/styles/ag-grid.css",
+              "ag-grid-community/styles/ag-theme-quartz.css"
             ],
             "scripts": []
           },
@@ -94,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d092c430-30c5-45cb-b6ef-14eed5ba4f70"
   }
 }
