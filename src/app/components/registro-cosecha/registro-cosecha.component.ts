@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ColDef, GridApi, GridReadyEvent } from "ag-grid-community";
 
 @Component({
-  selector: 'app-registro-cosecha',
-  templateUrl: './registro-cosecha.component.html',
-  styleUrls: ['./registro-cosecha.component.css']
+  selector: "app-registro-cosecha",
+  templateUrl: "./registro-cosecha.component.html",
+  styleUrls: ["./registro-cosecha.component.css"],
 })
 export class RegistroCosechaComponent implements OnInit {
   datoEdit: boolean;
@@ -13,22 +13,22 @@ export class RegistroCosechaComponent implements OnInit {
   private gridApi!: GridApi<any>;
   formSiembra: FormGroup;
   rowData = [
-    { id: 1, Fecha: "01/07/2023", Variedad: "frijol", Cantidad: 64950 },
-    { id: 2, Fecha: "01/08/2023", Variedad: "maíz", Cantidad: 50000 },
-    { id: 3, Fecha: "01/09/2023", Variedad: "trigo", Cantidad: 75000 },
-    { id: 4, Fecha: "01/10/2023", Variedad: "arroz", Cantidad: 60000 },
-    { id: 5, Fecha: "01/11/2023", Variedad: "sorgo", Cantidad: 55000 },
-    { id: 6, Fecha: "01/12/2023", Variedad: "cebada", Cantidad: 62000 },
-    { id: 7, Fecha: "01/01/2024", Variedad: "garbanzo", Cantidad: 68000 },
-    { id: 8, Fecha: "01/02/2024", Variedad: "lenteja", Cantidad: 59000 },
-    { id: 9, Fecha: "01/03/2024", Variedad: "soja", Cantidad: 63000 },
-    { id: 10, Fecha: "01/04/2024", Variedad: "cáñamo", Cantidad: 66000 },
+    { id: 1, Fecha: "01/07/2023", Rendimiento: "400", Calidad: "Excelente" },
+    { id: 2, Fecha: "01/08/2023", Rendimiento: "450", Calidad: "Buena" },
+    { id: 3, Fecha: "01/09/2023", Rendimiento: "300", Calidad: "Regular" },
+    { id: 4, Fecha: "01/10/2023", Rendimiento: "200", Calidad: "Mala" },
+    { id: 5, Fecha: "01/11/2023", Rendimiento: "350", Calidad: "Excelente" },
+    { id: 6, Fecha: "01/12/2023", Rendimiento: "500", Calidad: "Buena" },
+    { id: 7, Fecha: "01/01/2024", Rendimiento: "250", Calidad: "Regular" },
+    { id: 8, Fecha: "01/02/2024", Rendimiento: "150", Calidad: "Mala" },
+    { id: 9, Fecha: "01/03/2024", Rendimiento: "320", Calidad: "Excelente" },
+    { id: 10, Fecha: "01/04/2024", Rendimiento: "380", Calidad: "Buena" },
   ];
   colDefs: ColDef[] = [
     { field: "id", headerName: "id", checkboxSelection: true },
-    { field: "Fecha", headerName: "Fecha de Siembra" },
-    { field: "Variedad", headerName: "Variedad de Cultivo" },
-    { field: "Cantidad", headerName: "Cantidad de Semillas" },
+    { field: "Fecha", headerName: "Fecha de Cosecha:" },
+    { field: "Rendimiento", headerName: "Rendimiento del Cultivo (kg):" },
+    { field: "Calidad", headerName: "Calidad de la Cosecha" },
   ];
 
   defaulColDef = {
@@ -43,19 +43,19 @@ export class RegistroCosechaComponent implements OnInit {
     this.formSiembra = this.formBuilder.group({
       id: ["", [Validators.required]],
       Fecha: ["", [Validators.required]],
-      Variedad: ["", [Validators.required]],
-      Cantidad: ["", [Validators.required]],
+      Rendimiento: ["", [Validators.required]],
+      Calidad: ["", [Validators.required]],
     });
   }
 
   guardar() {
     let id = this.verUltimoId();
-    const { Fecha, Variedad, Cantidad } = this.formSiembra.value;
+    const { Fecha, Rendimiento, Calidad } = this.formSiembra.value;
     this.rowData.unshift({
       id,
       Fecha,
-      Variedad,
-      Cantidad: parseInt(Cantidad),
+      Rendimiento,
+      Calidad: Calidad,
     });
     this.onRowDataA();
     this.formSiembra.reset();
@@ -109,4 +109,5 @@ export class RegistroCosechaComponent implements OnInit {
     this.rowData[index] = this.formSiembra.value;
     this.formSiembra.reset();
     this.onRowDataA();
-  }}
+  }
+}
