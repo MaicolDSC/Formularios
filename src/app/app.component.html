@@ -4,6 +4,7 @@
     <div class="botones">
       <p (click)="cambioComponente('siembra')">Registro de Siembra</p>
       <p (click)="cambioComponente('cosecha')">Registro de Cosecha</p>
+      <p (click)="cambioComponente('suelo')">Informe Suelos</p>
     </div>
   </div>
   <div class="container-forms">
@@ -13,6 +14,7 @@
     <app-registro-cosecha
       *ngIf="tipoPantalla === 'cosecha'"
     ></app-registro-cosecha>
+    <app-informe-suelos *ngIf="tipoPantalla === 'suelo'"></app-informe-suelos>
   </div>
   <footer class="footer">
     <p>&copy; 2024 Gestión Agrícola</p>

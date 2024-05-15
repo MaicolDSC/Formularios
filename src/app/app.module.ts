@@ -8,12 +8,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { RegistroSiembraComponent } from "./components/registro-siembra/registro-siembra.component";
 import { RegistroCosechaComponent } from "./components/registro-cosecha/registro-cosecha.component";
+import { InformeSuelosComponent } from './components/informe-suelos/informe-suelos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroSiembraComponent,
     RegistroCosechaComponent,
+    InformeSuelosComponent,
   ],
   imports: [
     BrowserModule,
