@@ -13,7 +13,13 @@ export class RegistroSiembraComponent implements OnInit {
   private gridApi!: GridApi<any>;
   formSiembra: FormGroup;
   rowData = [
-    { id: 1, Fecha: "01/07/2023", Variedad: "frijol", Cantidad: 64950 },
+    {
+      id: 1,
+      Fecha: "01/07/2023",
+      Variedad:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quia! Libero explicabo ipsa doloribus in. Maiores cumque temporibus fugiat quam. Aut omnis ipsam eos odio voluptatum hic laboriosam eum ab?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quia! Libero explicabo ipsa doloribus in. Maiores cumque temporibus fugiat quam. Aut omnis ipsam eos odio voluptatum hic laboriosam eum ab?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quia! Libero explicabo ipsa doloribus in. Maiores cumque temporibus fugiat quam. Aut omnis ipsam eos odio voluptatum hic laboriosam eum ab?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quia! Libero explicabo ipsa doloribus in. Maiores cumque temporibus fugiat quam. Aut omnis ipsam eos odio voluptatum hic laboriosam eum ab?",
+      Cantidad: 64950,
+    },
     { id: 2, Fecha: "01/08/2023", Variedad: "maíz", Cantidad: 50000 },
     { id: 3, Fecha: "01/09/2023", Variedad: "trigo", Cantidad: 75000 },
     { id: 4, Fecha: "01/10/2023", Variedad: "arroz", Cantidad: 60000 },
@@ -29,6 +35,7 @@ export class RegistroSiembraComponent implements OnInit {
     { field: "Fecha", headerName: "Fecha de Siembra" },
     { field: "Variedad", headerName: "Variedad de Cultivo" },
     { field: "Cantidad", headerName: "Cantidad de Semillas" },
+    { field: "id", headerName: "acciones" },
   ];
 
   defaulColDef = {

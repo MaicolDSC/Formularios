@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { RegistroSiembraComponent } from "./components/registro-siembra/registro-siembra.component";
 import { RegistroCosechaComponent } from "./components/registro-cosecha/registro-cosecha.component";
 import { InformeSuelosComponent } from './components/informe-suelos/informe-suelos.component';
+import { BotonesAccionesComponent } from './components/registro-siembra/botones-acciones/botones-acciones.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { InformeSuelosComponent } from './components/informe-suelos/informe-suel
     RegistroSiembraComponent,
     RegistroCosechaComponent,
     InformeSuelosComponent,
+    BotonesAccionesComponent,
   ],
   imports: [
     BrowserModule,
